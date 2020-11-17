@@ -1,8 +1,13 @@
 import React from "react";
-import movies from "../data/movies.json";
 import Movie from "./Movie";
-function MoviesList() {
-  return movies.map((movie) => <Movie movie={movie} />);
-}
+import { MoviesListStyled } from "../styles/styledComponents";
+
+const MoviesList = ({ movies, checkMovieAsWatched }) => (
+  <MoviesListStyled>
+    {movies.map((movie) => (
+      <Movie movie={movie} checkMovieAsWatched={checkMovieAsWatched} />
+    ))}
+  </MoviesListStyled>
+);
 
 export default MoviesList;
