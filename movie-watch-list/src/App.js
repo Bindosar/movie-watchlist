@@ -15,18 +15,24 @@ function App() {
     movie.watched = !movie.watched;
     setMovies(updatedMovies);
   };
+  const deleteMovie = (id) => {
+    setMovies(movies.filter((movie) => movie.id !== id));
+  };
+  const createMovie = (movie) => [setMovies([...movies, movie])];
   return (
     <>
-      <Navbar />
+      <Navbar createMovie={createMovie} />
       <h1>Watched List</h1>
       <MoviesList
         checkMovieAsWatched={checkMovieAsWatched}
         movies={movies.filter((movie) => movie.watched)}
+        deleteMovie={deleteMovie}
       />
       <h1>Not Watched List</h1>
       <MoviesList
         checkMovieAsWatched={checkMovieAsWatched}
         movies={movies.filter((movie) => !movie.watched)}
+        deleteMovie={deleteMovie}
       />
 
       <Footer />

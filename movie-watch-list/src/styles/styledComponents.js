@@ -7,8 +7,9 @@ export const MoviesListStyled = styled.div`
 `;
 
 export const MovieStyled = styled.div`
+  display: block;
   margin: 10px;
-  height: 150px;
+  width: 200px;
   border-style: solid;
   border-width: 1px;
   padding: 10px;
@@ -16,5 +17,12 @@ export const MovieStyled = styled.div`
 `;
 
 export const MovieImageStyled = styled.img`
+  object-fit: cover;
+  position: relative;
   width: 100%;
+`;
+
+export const MovieActionsButtons = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;

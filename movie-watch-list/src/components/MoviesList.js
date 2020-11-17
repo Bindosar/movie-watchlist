@@ -2,10 +2,14 @@ import React from "react";
 import Movie from "./Movie";
 import { MoviesListStyled } from "../styles/styledComponents";
 
-const MoviesList = ({ movies, checkMovieAsWatched }) => (
+const MoviesList = ({ movies, checkMovieAsWatched, deleteMovie }) => (
   <MoviesListStyled>
     {movies.map((movie) => (
-      <Movie movie={movie} checkMovieAsWatched={checkMovieAsWatched} />
+      <Movie
+        deleteMovie={deleteMovie}
+        movie={movie}
+        checkMovieAsWatched={checkMovieAsWatched}
+      />
     ))}
   </MoviesListStyled>
 );
