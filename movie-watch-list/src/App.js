@@ -9,7 +9,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-
+import { NotWatchedList } from "./styles/styledComponents";
 function App() {
   // STATES
   const [movies, setMovies] = useState(moviesJson);
@@ -59,7 +59,7 @@ export function CenteredGrid({ movies, deleteMovie, checkMovieAsWatched }) {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <h1>Not Watched List</h1>
+          <NotWatchedList>Not Watched List</NotWatchedList>
           <MoviesList
             checkMovieAsWatched={checkMovieAsWatched}
             movies={movies.filter((movie) => !movie.watched)}

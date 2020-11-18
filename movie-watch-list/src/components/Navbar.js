@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function SearchAppBar() {
+export function SearchAppBar({ setMovie, movie, createMovie }) {
   const classes = useStyles();
 
   return (
@@ -85,6 +85,11 @@ export function SearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Movies Watchlist Without the space
           </Typography>
+          <MovieForm
+            movie={movie}
+            setMovie={setMovie}
+            createMovie={createMovie}
+          />
         </Toolbar>
       </AppBar>
     </div>
@@ -95,8 +100,11 @@ function Navbar({ createMovie }) {
   const [movie, setMovie] = useState({ title: "", img: "" });
   return (
     <>
-      <SearchAppBar />
-      <MovieForm movie={movie} setMovie={setMovie} createMovie={createMovie} />
+      <SearchAppBar
+        setMovie={setMovie}
+        movie={movie}
+        createMovie={createMovie}
+      />
     </>
   );
 }

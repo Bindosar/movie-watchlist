@@ -30,3 +30,7 @@ export const MovieActionsButtons = styled.div`
 export const SearchBarStyled = styled.input`
   width: 80%;
 `;
+
+export const NotWatchedList = styled.h1`
+  margin-left: 50px;
+`;
