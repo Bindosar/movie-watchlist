@@ -12,6 +12,7 @@ const MoviesList = ({ movies, checkMovieAsWatched, deleteMovie }) => {
   return (
     <MoviesListStyled>
       <SearchBar query={query} setQuery={setQuery} />
+      <h3>{movies.filter(filterByTitleCondition).length} </h3>
       {movies.filter(filterByTitleCondition).map((movie) => (
         <Movie
           deleteMovie={deleteMovie}
