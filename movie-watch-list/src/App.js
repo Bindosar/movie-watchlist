@@ -9,7 +9,6 @@ import SearchBar from "./components/SearchBar";
 function App() {
   // STATES
   const [movies, setMovies] = useState(moviesJson);
-  const [query, setQuery] = useState("");
 
   // METHODS
   const checkMovieAsWatched = (id) => {
@@ -23,28 +22,21 @@ function App() {
   };
   const createMovie = (movie) => [setMovies([...movies, movie])];
 
-  const filterByTitleCondition = (movie) =>
-    movie.title.toLowerCase().includes(query.toLowerCase());
-
   // COMPONENT
   return (
     <>
       <Navbar createMovie={createMovie} />
       <h1>Watched List</h1>
-      <SearchBar query={query} setQuery={setQuery} />
+
       <MoviesList
         checkMovieAsWatched={checkMovieAsWatched}
-        movies={movies.filter(
-          (movie) => movie.watched && filterByTitleCondition(movie)
-        )}
+        movies={movies.filter((movie) => movie.watched)}
         deleteMovie={deleteMovie}
       />
       <h1>Not Watched List</h1>
       <MoviesList
         checkMovieAsWatched={checkMovieAsWatched}
-        movies={movies.filter(
-          (movie) => !movie.watched && filterByTitleCondition(movie)
-        )}
+        movies={movies.filter((movie) => !movie.watched)}
         deleteMovie={deleteMovie}
       />
       <Footer />
