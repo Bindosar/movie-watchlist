@@ -9,6 +9,7 @@ function Movie({ movie, checkMovieAsWatched, deleteMovie }) {
     <MovieStyled>
       <MovieImageStyled src={movie.img} />
       <h1>{movie.title}</h1>
+      <h4 style={{ color: "#148914" }}>{movie.rating}</h4>
       <MovieActionsButtons>
         <button className="btn" onClick={() => checkMovieAsWatched(movie.id)}>
           {movie.watched ? "not watched" : "watched"}

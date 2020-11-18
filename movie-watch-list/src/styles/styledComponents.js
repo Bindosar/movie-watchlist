@@ -26,3 +26,7 @@ export const MovieActionsButtons = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+
+export const SearchBarStyled = styled.input`
+  width: 80%;
+`;

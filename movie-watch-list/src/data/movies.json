@@ -1,35 +1,35 @@
 [
   {
     "id": 1,
-    "title": "coco",
+    "title": "The greatest Showman",
     "rating": 8,
     "watched": false,
     "img": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_.jpg"
   },
   {
     "id": 2,
-    "title": "coco2",
+    "title": "COCO",
     "rating": 8,
     "watched": false,
     "img": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_.jpg"
   },
   {
     "id": 3,
-    "title": "coco3",
+    "title": "Madagqascer",
     "rating": 8,
     "watched": false,
     "img": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_.jpg"
   },
   {
     "id": 4,
-    "title": "coco4",
+    "title": "Herculiez",
     "rating": 8,
     "watched": false,
     "img": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_.jpg"
   },
   {
     "id": 5,
-    "title": "coco5",
+    "title": "Insmonia",
     "rating": 8,
     "watched": false,
     "img": "https://m.media-amazon.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_.jpg"
