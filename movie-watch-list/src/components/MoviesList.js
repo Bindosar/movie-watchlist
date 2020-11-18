@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Movie from "./Movie";
 import { MoviesListStyled } from "../styles/styledComponents";
 import SearchBar from "./SearchBar";
+import { Container } from "@material-ui/core";
 
 const MoviesList = ({ movies, checkMovieAsWatched, deleteMovie }) => {
   const [query, setQuery] = useState("");
@@ -10,17 +11,19 @@ const MoviesList = ({ movies, checkMovieAsWatched, deleteMovie }) => {
     movie.title.toLowerCase().includes(query.toLowerCase());
 
   return (
-    <MoviesListStyled>
-      <SearchBar query={query} setQuery={setQuery} />
-      <h3>{movies.filter(filterByTitleCondition).length} </h3>
-      {movies.filter(filterByTitleCondition).map((movie) => (
-        <Movie
-          deleteMovie={deleteMovie}
-          movie={movie}
-          checkMovieAsWatched={checkMovieAsWatched}
-        />
-      ))}
-    </MoviesListStyled>
+    <Container>
+      <MoviesListStyled>
+        <SearchBar query={query} setQuery={setQuery} />
+        <h3>{movies.filter(filterByTitleCondition).length} </h3>
+        {movies.filter(filterByTitleCondition).map((movie) => (
+          <Movie
+            deleteMovie={deleteMovie}
+            movie={movie}
+            checkMovieAsWatched={checkMovieAsWatched}
+          />
+        ))}
+      </MoviesListStyled>
+    </Container>
   );
 };
 

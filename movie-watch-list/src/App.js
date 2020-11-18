@@ -4,7 +4,11 @@ import MoviesList from "./components/MoviesList";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import moviesJson from "./data/movies.json";
-import SearchBar from "./components/SearchBar";
+import Button from "@material-ui/core/Button";
+
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
 
 function App() {
   // STATES
@@ -26,21 +30,51 @@ function App() {
   return (
     <>
       <Navbar createMovie={createMovie} />
-      <h1>Watched List</h1>
-
-      <MoviesList
-        checkMovieAsWatched={checkMovieAsWatched}
-        movies={movies.filter((movie) => movie.watched)}
+      <CenteredGrid
+        movies={movies}
         deleteMovie={deleteMovie}
-      />
-      <h1>Not Watched List</h1>
-      <MoviesList
         checkMovieAsWatched={checkMovieAsWatched}
-        movies={movies.filter((movie) => !movie.watched)}
-        deleteMovie={deleteMovie}
       />
       <Footer />
     </>
   );
 }
 export default App;
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}));
+
+export function CenteredGrid({ movies, deleteMovie, checkMovieAsWatched }) {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <h1>Not Watched List</h1>
+          <MoviesList
+            checkMovieAsWatched={checkMovieAsWatched}
+            movies={movies.filter((movie) => !movie.watched)}
+            deleteMovie={deleteMovie}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <h1>Watched List</h1>
+          <MoviesList
+            checkMovieAsWatched={checkMovieAsWatched}
+            movies={movies.filter((movie) => movie.watched)}
+            deleteMovie={deleteMovie}
+          />
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
