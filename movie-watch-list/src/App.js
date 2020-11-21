@@ -4,10 +4,8 @@ import MoviesList from "./components/MoviesList";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import moviesJson from "./data/movies.json";
-import Button from "@material-ui/core/Button";
-
+// STYLES
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { NotWatchedList } from "./styles/styledComponents";
 function App() {
@@ -24,7 +22,11 @@ function App() {
   const deleteMovie = (id) => {
     setMovies(movies.filter((movie) => movie.id !== id));
   };
-  const createMovie = (movie) => [setMovies([...movies, movie])];
+  const createMovie = (movie) => {
+    const updatedMovie = { ...movie };
+    updatedMovie.id = movies[movies.length - 1].id + 1;
+    setMovies([...movies, updatedMovie]);
+  };
 
   // COMPONENT
   return (

@@ -16,6 +16,7 @@ const MovieForm = ({ setMovie, movie, createMovie }) => {
           onChange={(event) => setMovie({ ...movie, img: event.target.value })}
           placeholder="Movie url "
           variant="filled"
+          styles
         />
 
         <Button
